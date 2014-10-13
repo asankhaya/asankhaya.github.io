@@ -5,7 +5,9 @@
             the menus
  **************************************************************/
 
-
+img[src*="linkedin"] {
+    display: none;
+}
 
 /**************************************************************
    #wrapper & #content: wrapper positions and sets the width
