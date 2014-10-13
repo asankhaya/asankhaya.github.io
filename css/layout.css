@@ -4,11 +4,11 @@
    PURPOSE: Controls the layout of the site and styles
             the menus
  **************************************************************/
-
+/*
 img[src*="linkedin"] {
     display: none;
 }
-
+*/
 /**************************************************************
    #wrapper & #content: wrapper positions and sets the width
    on the content.  The background is then applied to #content.
