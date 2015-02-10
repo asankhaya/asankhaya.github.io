@@ -53,7 +53,16 @@ var backgroundReplacement = null;
 
 var metaEffect = gapi.hangout.av.effects.createMetaEffect();
 var effectChain = [];
-effectChain.push(metaEffect.createSubEffect('cartoon'),{});
+var cartoonProps = {
+  'black' : 0.899999,
+  'height' : 180,
+  'iterations' : 2,
+  'similarity_range' : 20,
+  'white' : 0.800000,
+  'width' : 320,
+  'window_size' : 25
+};
+effectChain.push(metaEffect.createSubEffect('cartoon'),cartoonProps);
 
 function addBackgroundReplacementEffect() {
   // add behavior to UI Controls
@@ -66,6 +75,8 @@ function enableReplacement() {
 
   metaEffect.initEffects(effectChain);
   metaEffect.pipelineEffects(effectChain);
+  replace.hide();
+  disableRep.show();
   /*
   gapi.hangout.av.effects.requestBackgroundReplacementLock(
       function(hasLock) {
