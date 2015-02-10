@@ -50,10 +50,6 @@
 var replace = $('#replace');
 var disableRep = $('#disableRep');
 
-var blur = $('#blur');
-var disableBlur = $('#disableBlur');
-var blurSlider = $('#blurSlider');
-
 /* Background Replacement */
 
 // resources
@@ -101,48 +97,9 @@ function disableReplacement() {
   disableRep.hide();
 }
 
-/* Background Blur */
-
-var backgroundBlur = null;
-
-function addBackgroundBlurEffect() {
-  blur.click(enableBackgroundBlur);
-  disableBlur.click(disableBackgroundBlur);
-}
-
-function enableBackgroundBlur() {
-  // Enable background blur.
-  backgroundBlur = gapi.hangout.av.effects.createBackgroundBlur();
-  backgroundBlur.setAlphaThresholdAutoUpdating(true);
-  backgroundBlur.setVisible(true);
-
-  // Manually control alpha threshold for background recognition.
-  backgroundBlur.setAlphaThresholdAutoUpdating(false);
-  backgroundBlur.setAlphaThreshold(200);
-  
-  blurSlider.change(function(){
-    backgroundBlur.setBlurWindowSize(parseInt(this.value));
-  });
-  
-  blur.hide();
-  disableBlur.show();
-  blurSlider.show();
-}
-
-function disableBackgroundBlur() {
-  // Disable background blur.
-  backgroundBlur.setVisible(false);
-  
-  blur.show();
-  disableBlur.hide();
-  blurSlider.unbind();
-  blurSlider.hide();
-}
-
 // Kicks off app and attaches all listeners.
 function startApp() {
  addBackgroundReplacementEffect();
- addBackgroundBlurEffect();
 }
 
 
