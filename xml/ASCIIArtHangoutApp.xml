@@ -64,7 +64,7 @@ var cartoonProps = {
   'window_size' : 25
 };
 
-var cartoonEffect = metaEffect.createSubEffect('catoon', cartoonProps);
+var cartoonEffect = metaEffect.createSubEffect('cartoon', cartoonProps);
 effectChain.push(cartoonEffect);
 
 function addBackgroundReplacementEffect() {
