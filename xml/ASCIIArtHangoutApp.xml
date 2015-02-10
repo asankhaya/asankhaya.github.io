@@ -33,11 +33,6 @@
   <button id="replace">Replace my background!</button>
   <button id="disableRep" style="display: none;">Disable replacement</button>
 </div>
-<div id="blurControls">
-  <button id="blur">Blur my background!</button>
-  <button id="disableBlur" style="display: none;">Disable blur</button>
-  <input id="blurSlider" style="display: none;" type="range" min="1" max="200" value="200" />
-</div>
 
 <hr>
 
@@ -53,7 +48,7 @@ var disableRep = $('#disableRep');
 /* Background Replacement */
 
 // resources
-var backgroundImageUrl = 'http://www.gstatic.com/chat/apps/fx/v1.12/fx/config/backgrounds/mosaic.png';
+var backgroundImageUrl = 'http://i.imgur.com/55WYj1Z.png';
 var backgroundImage = gapi.hangout.av.effects.createImageResource(backgroundImageUrl);
 var backgroundReplacement = null;
 
