@@ -36,8 +36,7 @@
 
 <hr>
 
-<p>brought to you with <3, from <a href="https://asankhaya.github.io/" target="_blank">Asankhaya</a> at 
-<a href="https://sourceclear.com" target="_blank">SRC:CLR</a></p>
+<p>brought to you with <3, from <a href="https://asankhaya.github.io/" target="_blank">Asankhaya</a></p>
 
 <script>
 
@@ -48,7 +47,7 @@ var disableRep = $('#disableRep');
 /* Background Replacement */
 
 // resources
-var backgroundImageUrl = 'http://i.imgur.com/PJsenI5.png';
+var backgroundImageUrl = 'http://i.imgur.com/8AOpaX1.png';
 var backgroundImage = gapi.hangout.av.effects.createImageResource(backgroundImageUrl);
 var backgroundReplacement = null;
 
