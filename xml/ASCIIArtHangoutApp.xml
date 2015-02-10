@@ -29,14 +29,17 @@
     
 <h3>Magicco for Hangouts</h3>
 
+<div>
+<img src="https://i.imgur.com/S7tpt8S.jpg" width="100">
+</div>
+
 <div id="replacementControls">
   <button id="replace">Cartoonize!</button>
   <button id="disableRep" style="display: none;">Uncartoonize!</button>
 </div>
 
 <hr>
-
-<p>[<a href="http://magicco.divshot.io/" target="_blank">Web App</a>|<a href="https://www.facebook.com/magiccomics" target="_blank">FB Page</a>]</p>
+<p>[<a href="http://magicco.divshot.io/" target="_blank">Web</a>|<a href="https://www.facebook.com/magiccomics" target="_blank">FB</a>]</p>
 
 <script>
 
