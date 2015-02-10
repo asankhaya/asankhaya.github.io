@@ -12,7 +12,7 @@
  * License for the specific language governing permissions and limitations under
  * the License
 -->
-	<ModulePrefs title="ASCII Art for Hangouts">
+	<ModulePrefs title="Magicco for Hangouts">
 		<Require feature="rpc" />
 		<Require feature="views" />
 		<Require feature="locked-domain" />
@@ -27,29 +27,22 @@
 
 <body style="padding: 10px">
     
-<h3>ASCII Art for Hangouts</h3>
+<h3>Magicco for Hangouts</h3>
 
 <div id="replacementControls">
-  <button id="replace">Replace my background!</button>
-  <button id="disableRep" style="display: none;">Disable replacement</button>
+  <button id="replace">Cartoonize!</button>
+  <button id="disableRep" style="display: none;">Uncartoonize!</button>
 </div>
 
 <hr>
 
-<p>brought to you with <3 by <a href="https://asankhaya.github.io/" target="_blank">Asankhaya</a></p>
+<p>Magicco [<a href="http://magicco.divshot.io/" target="_blank">Web App</a>|<a href="fb.me/magicco" target="_blank">Facebook Page</a>]</p>
 
 <script>
 
 // UI controls
 var replace = $('#replace');
 var disableRep = $('#disableRep');
-
-/* Background Replacement */
-
-// resources
-var backgroundImageUrl = 'https://i.imgur.com/8AOpaX1.png';
-var backgroundImage = gapi.hangout.av.effects.createImageResource(backgroundImageUrl);
-var backgroundReplacement = null;
 
 var metaEffect = gapi.hangout.av.effects.createMetaEffect();
 var effectChain = [];
@@ -74,42 +67,17 @@ function addBackgroundReplacementEffect() {
 }
 
 function enableReplacement() {
-  // Enable background replacement.
 
   metaEffect.initEffects(effectChain);
   metaEffect.pipelineEffects(effectChain);
   replace.hide();
   disableRep.show();
-  /*
-  gapi.hangout.av.effects.requestBackgroundReplacementLock(
-      function(hasLock) {
-        if (!hasLock) {
-          window.console.log('Fail to get the background replacement lock.');
-          return;
-        }
-
-        backgroundReplacement = gapi.hangout.av.effects.getBackgroundReplacement();
-        backgroundReplacement.resetModel();
-        backgroundReplacement.setAlphaThresholdAutoUpdating(true);
-        backgroundReplacement.setImageResource(backgroundImage);
-        backgroundReplacement.setVisible(true);
-        
-        replace.hide();
-        disableRep.show();
-      }
-  );
-
-  // Manually control alpha threshold for background recognition.
-  if (backgroundReplacement != null) {
-    backgroundReplacement.setAlphaThresholdAutoUpdating(false);
-    backgroundReplacement.setAlphaThreshold(200);
-  }
-  */
 }
 
 function disableReplacement() {
-  // Disable and release background replacement.
-  gapi.hangout.av.effects.releaseBackgroundReplacementLock();
+  if(metaEffect.isEnabled()) {
+    metaEffect.clearEffects();
+  }
   replace.show();
   disableRep.hide();
 }
