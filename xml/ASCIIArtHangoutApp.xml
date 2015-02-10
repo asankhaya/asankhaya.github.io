@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *	
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License
+-->
+	<ModulePrefs title="ASCII Art for Hangouts">
+		<Require feature="rpc" />
+		<Require feature="views" />
+		<Require feature="locked-domain" />
+	</ModulePrefs>
+	<Content type="html"><![CDATA[     
+
+<html>
+<style type="text/css">
+<!--
+.button {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
+  background: -moz-linear-gradient(top, #fff, #ddd);  
+  border: 1px solid #bbb;
+}
+
+.button:active {
+	background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#333)); 
+	background: -moz-linear-gradient(bottom, #ddd, #aaa); }
+
+-->
+</style>
+<body>
+
+<script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
+
+<h3>ASCII Art for Hangouts App</h3>
+
+<p>
+<input class="button" type="button" value="Show participants!" id="showParticipants" 
+    style="visibility:hidden;"
+    onClick="showParticipants()"/>
+</p>
+
+<div id="participantsDiv"></div>
+
+<hr>
+
+<p>Developed by <a href="http://asankhaya.github.io/">Asankhaya Sharma</a></p>
+
+<script>
+// UI controls
+var replace = $('#replace');
+var disableRep = $('#disableRep');
+
+var blur = $('#blur');
+var disableBlur = $('#disableBlur');
+var blurSlider = $('#blurSlider');
+
+/* Background Replacement */
+
+// resources
+var backgroundImageUrl = 'http://www.gstatic.com/chat/apps/fx/v1.12/fx/config/backgrounds/mosaic.png';
+var backgroundImage = gapi.hangout.av.effects.createImageResource(backgroundImageUrl);
+var backgroundReplacement = null;
+
+function addBackgroundReplacementEffect() {
+  // add behavior to UI Controls
+  replace.click(enableReplacement);
+  disableRep.click(disableReplacement);
+}
+
+function enableReplacement() {
+  // Enable background replacement.
+  gapi.hangout.av.effects.requestBackgroundReplacementLock(
+      function(hasLock) {
+        if (!hasLock) {
+          window.console.log('Fail to get the background replacement lock.');
+          return;
+        }
+
+        backgroundReplacement = gapi.hangout.av.effects.getBackgroundReplacement();
+        backgroundReplacement.resetModel();
+        backgroundReplacement.setAlphaThresholdAutoUpdating(true);
+        backgroundReplacement.setImageResource(backgroundImage);
+        backgroundReplacement.setVisible(true);
+        
+        replace.hide();
+        disableRep.show();
+      }
+  );
+
+  // Manually control alpha threshold for background recognition.
+  if (backgroundReplacement != null) {
+    backgroundReplacement.setAlphaThresholdAutoUpdating(false);
+    backgroundReplacement.setAlphaThreshold(200);
+  }
+}
+
+function disableReplacement() {
+  // Disable and release background replacement.
+  gapi.hangout.av.effects.releaseBackgroundReplacementLock();
+  replace.show();
+  disableRep.hide();
+}
+
+/* Background Blur */
+
+var backgroundBlur = null;
+
+function addBackgroundBlurEffect() {
+  blur.click(enableBackgroundBlur);
+  disableBlur.click(disableBackgroundBlur);
+}
+
+function enableBackgroundBlur() {
+  // Enable background blur.
+  backgroundBlur = gapi.hangout.av.effects.createBackgroundBlur();
+  backgroundBlur.setAlphaThresholdAutoUpdating(true);
+  backgroundBlur.setVisible(true);
+
+  // Manually control alpha threshold for background recognition.
+  backgroundBlur.setAlphaThresholdAutoUpdating(false);
+  backgroundBlur.setAlphaThreshold(200);
+  
+  blurSlider.change(function(){
+    backgroundBlur.setBlurWindowSize(parseInt(this.value));
+  });
+  
+  blur.hide();
+  disableBlur.show();
+  blurSlider.show();
+}
+
+function disableBackgroundBlur() {
+  // Disable background blur.
+  backgroundBlur.setVisible(false);
+  
+  blur.show();
+  disableBlur.hide();
+  blurSlider.unbind();
+  blurSlider.hide();
+}
+
+// Kicks off app and attaches all listeners.
+function startApp() {
+ addBackgroundReplacementEffect();
+ addBackgroundBlurEffect();
+}
+
+
+function init() {
+  gapi.hangout.onApiReady.add(
+      function(eventObj) {
+        startApp();
+      });
+}
+
+// Add API listener immediately.  If you need an
+// OAuth 2.0 access token, your startup will need to
+// be different.
+init();
+</script>
+</body>
+]]>
+</Content>
+</Module>
+
