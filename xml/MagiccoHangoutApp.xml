@@ -26,7 +26,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 <body style="padding: 10px">
-    
+<img src="https://i.imgur.com/S7tpt8S.jpg" width="100">  
 <h3>Magicco for Hangouts</h3>
 
 <div id="replacementControls">
@@ -35,7 +35,6 @@
 </div>
 
 <hr>
-<img src="https://i.imgur.com/S7tpt8S.jpg" width="100">
 <p>
 [<a href="http://magicco.divshot.io/" target="_blank">Web</a>|<a href="https://www.facebook.com/magiccomics" target="_blank">FB</a>]</p>
 
