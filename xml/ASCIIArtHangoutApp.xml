@@ -48,7 +48,7 @@ var disableRep = $('#disableRep');
 /* Background Replacement */
 
 // resources
-var backgroundImageUrl = 'http://i.imgur.com/dGJKZom.png';
+var backgroundImageUrl = 'http://i.imgur.com/PJsenI5.png';
 var backgroundImage = gapi.hangout.av.effects.createImageResource(backgroundImageUrl);
 var backgroundReplacement = null;
 
