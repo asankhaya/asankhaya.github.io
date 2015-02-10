@@ -79,8 +79,8 @@ function enableReplacement() {
 
   // Manually control alpha threshold for background recognition.
   if (backgroundReplacement != null) {
-    backgroundReplacement.setAlphaThresholdAutoUpdating(false);
-    backgroundReplacement.setAlphaThreshold(100);
+    backgroundReplacement.setAlphaThresholdAutoUpdating(true);
+    //backgroundReplacement.setAlphaThreshold(200);
   }
 }
 
