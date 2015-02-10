@@ -36,7 +36,7 @@
 
 <hr>
 
-<p>brought to you with <3 - <a href="https://asankhaya.github.io/" target="_blank">Asankhaya</a></p>
+<p>brought to you with <3 by <a href="https://asankhaya.github.io/" target="_blank">Asankhaya</a></p>
 
 <script>
 
@@ -47,7 +47,7 @@ var disableRep = $('#disableRep');
 /* Background Replacement */
 
 // resources
-var backgroundImageUrl = 'http://i.imgur.com/8AOpaX1.png';
+var backgroundImageUrl = 'http://i.imgur.com/ev7EFH8.png';
 var backgroundImage = gapi.hangout.av.effects.createImageResource(backgroundImageUrl);
 var backgroundReplacement = null;
 
@@ -79,8 +79,8 @@ function enableReplacement() {
 
   // Manually control alpha threshold for background recognition.
   if (backgroundReplacement != null) {
-    backgroundReplacement.setAlphaThresholdAutoUpdating(true);
-    //backgroundReplacement.setAlphaThreshold(200);
+    backgroundReplacement.setAlphaThresholdAutoUpdating(false);
+    backgroundReplacement.setAlphaThreshold(200);
   }
 }
 
