@@ -53,6 +53,7 @@ var backgroundReplacement = null;
 
 var metaEffect = gapi.hangout.av.effects.createMetaEffect();
 var effectChain = [];
+
 var cartoonProps = {
   'black' : 0.899999,
   'height' : 180,
@@ -62,7 +63,9 @@ var cartoonProps = {
   'width' : 320,
   'window_size' : 25
 };
-effectChain.push(metaEffect.createSubEffect('cartoon'),cartoonProps);
+
+var cartoonEffect = metaEffect.createSubEffect('catoon', cartoonProps);
+effectChain.push(cartoonEffect);
 
 function addBackgroundReplacementEffect() {
   // add behavior to UI Controls
