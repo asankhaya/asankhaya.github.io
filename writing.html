@@ -15,8 +15,17 @@
   ga('create', 'UA-51929846-3', 'asankhaya.github.io');
   ga('require', 'displayfeatures');
   ga('send', 'pageview');
-
 </script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
+<script src='js/rss.js' defer></script>
+<script>
+    jQuery(function($) {
+      $("#rss-feeds").rss("https://lambdasec.github.io/feed.xml",
+      {
+        entryTemplate:'<li><a href="{url}">{title}</a><br/>{shortBodyPlain}</li>'
+      })
+    })
+</script>	
 </head>
 <body>
 <!-- #wrapper: centers the content and sets the width -->
@@ -43,7 +52,11 @@
     </ul>
     <!-- #page: holds all page content, as well as footer -->
     <div id="page">
-	 <h3>Series</h3>
+	<h3>Blog</h3>
+	  <ul>
+ 	    <div id="rss-feeds"></div>
+	  </ul>
+	<h3>Series</h3>
 	  <ul>
 	  <li>
 	  <a href="https://medium.com/series/how-to-be-an-authentic-leader-5f7d18e70255" target="_blank">How to be an Authentic Leader?</a> (Medium Editors' Picks 2017)
@@ -134,7 +147,7 @@
 	</li>
 	</ul>
 	<!-- .footer: the site footer text, links and whatever else -->
-      <p class="footer"> last updated on 24-sep-18
+      <p class="footer"> last updated on 12-jun-19
 	  </p>
     </div>
   </div>
