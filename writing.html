@@ -27,7 +27,7 @@
       $("#rss-feeds").rss("https://lambdasec.github.io/feed.xml",
       {
 	layoutTemplate:'<ul class="rss">{entries}</ul>',
-        entryTemplate:'<li><a href="{url}">{title}</a> ({date})</li>',
+        entryTemplate:'<li><a href="{url}" target="_blank">{title}</a> ({date})</li>',
 	dateFormat: 'YYYY',
 	limit: 32
       }, callback)
