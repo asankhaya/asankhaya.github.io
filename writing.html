@@ -20,15 +20,22 @@
 <script src='js/rss.js' defer></script>
 <script type="text/javascript" src="js/hideMaxListItem-min.js"></script>	
 <script>
-    jQuery(function($) {
+   $(document).ready(function() {  
+    function(fetchFeed) {
       $("#rss-feeds").rss("https://lambdasec.github.io/feed.xml",
       {
 	layoutTemplate:'<ul class="rss">{entries}</ul>',
         entryTemplate:'<li><a href="{url}">{title}</a></li>',
 	limit: 999
       });
+    }
+    function(hideItems) {	   
       $('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
-    })
+     });
+    }
+   fetchFeed();		     
+   $('#rss-feeds').promise().then(hideItems);
+  });
 </script>
 </head>
 <body>
