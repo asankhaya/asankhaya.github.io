@@ -31,7 +31,7 @@
 <script type="text/javascript">
 	// Run function on both ULs and OLs
 	$(document).ready(function() {  
-		$('#content div.first').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
+		$('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
 	});  
 </script>	
 </head>
@@ -61,7 +61,7 @@
     <!-- #page: holds all page content, as well as footer -->
     <div id="page">
 	<h3>Blog</h3>
- 	  <div id="rss-feeds" class="first"></div>
+ 	  <div id="rss-feeds"></div>
 	<h3>Series</h3>
 	  <ul>
 	  <li>
