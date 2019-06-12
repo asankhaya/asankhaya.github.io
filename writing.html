@@ -18,13 +18,21 @@
 </script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
 <script src='js/rss.js' defer></script>
+<script type="text/javascript" src="js/hideMaxListItem-min.js"></script>	
 <script>
     jQuery(function($) {
       $("#rss-feeds").rss("https://lambdasec.github.io/feed.xml",
       {
-        entryTemplate:'<li><a href="{url}">{title}</a><br/>{shortBodyPlain}</li>'
+        entryTemplate:'<li><a href="{url}">{title}</a><br/>{shortBodyPlain}</li>',
+	limit: 999
       })
     })
+</script>
+<script type="text/javascript">
+	// Run function on both ULs and OLs
+	$(document).ready(function() {  
+		$('#content ul.first').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
+	});  
 </script>	
 </head>
 <body>
@@ -53,7 +61,7 @@
     <!-- #page: holds all page content, as well as footer -->
     <div id="page">
 	<h3>Blog</h3>
- 	  <div id="rss-feeds"></div>
+ 	  <div id="rss-feeds" class="first"></div>
 	<h3>Series</h3>
 	  <ul>
 	  <li>
