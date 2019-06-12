@@ -26,15 +26,10 @@
 	layoutTemplate:'<ul class="rss">{entries}</ul>',
         entryTemplate:'<li><a href="{url}">{title}</a></li>',
 	limit: 999
-      })
+      });
+      $('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
     })
 </script>
-<script type="text/javascript">
-	// Run function on both ULs and OLs
-	$(document).ready(function() {  
-		$('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
-	});  
-</script>	
 </head>
 <body>
 <!-- #wrapper: centers the content and sets the width -->
