@@ -32,7 +32,6 @@
     }
     function hideItems(){	   
       $('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
-     });
     }
    fetchFeed();		     
    $('#rss-feeds').promise().then(hideItems);
