@@ -1,5 +1,8 @@
 const DOMPARSER = new DOMParser().parseFromString.bind(new DOMParser())
 /* Fetch URLs from JSON */
+{
+	"urls": ["https://lambdasec.github.io/feed.xml"]
+}
 fetch('urls.json').then((res) => {
 	res.text().then((data) => {
 		var frag = document.createDocumentFragment()
