@@ -32,12 +32,11 @@
   		const parser = new DOMParser();
   		const xmlDoc = parser.parseFromString(xml,"text/xml");
   		const html = Array.from(xmlDoc.getElementsByTagName('entry')).map(entry => `
-    		<div class="entry">
-      			<div class="timestamp">${date(entry)}</div>
+    		<ul class="rss">
 			<a href="${t(entry, 'link').getAttribute('href')}">
-        		<h2 class="entry-title">${t(entry, 'title').innerHTML}</h2>
+        		${t(entry, 'title').innerHTML}
       			</a>
-    		</div>`);
+    		</ul>`);
   		document.getElementById('rss-feeds').innerHTML = html.join('');
 	})
 /*
@@ -194,7 +193,7 @@
 	</li>
 	</ul>
 	<!-- .footer: the site footer text, links and whatever else -->
-      <p class="footer"> last updated on 08-aug-22
+      <p class="footer"> last updated on 18-may-23
 	  </p>
     </div>
   </div>
