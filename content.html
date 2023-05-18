@@ -39,7 +39,7 @@
     		</ul>`);
   		document.getElementById('rss-feeds').innerHTML = html.join('');
 		})
-		.then(hideitems())
+		.then(hideItems())
 	
       	function hideItems(){	   
       		$('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'})
