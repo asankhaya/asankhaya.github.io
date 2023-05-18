@@ -38,7 +38,7 @@
     		<ul class="rss">
 			<li><a href="${t(entry, 'link').getAttribute('href')}" target="_blank">
         		${t(entry, 'title').innerHTML}
-      			</a> ${date(entry)}</li>
+      			</a> (${date(entry)})</li>
     		</ul>`);
   		document.getElementById('rss-feeds').innerHTML = html.join('');
 		})
