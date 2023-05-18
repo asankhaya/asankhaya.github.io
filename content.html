@@ -16,52 +16,37 @@
   ga('require', 'displayfeatures');
   ga('send', 'pageview');
 </script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script type="text/javascript" src='js/rss.js'></script>
 <script type="text/javascript" src="js/hideMaxListItem-min.js"></script>	
 <script>
-	function hideItems(){	   
-      		$('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'})
-    	}
-	const t = (entry, tname) => entry.getElementsByTagName(tname)[0];
-	const date = entry => new Date(t(entry, 'published').textContent).getFullYear();
-	//const html2txt = html => html.replace(/<(?:.|\n)*?>/gm, '');
-	//const content = entry => html2txt(t(entry, 'content').textContent).slice(0, 200);
+$(function(){
+	fetchFeed(hideItems);
+});	
 
-	fetch('https://lambdasec.github.io/feed.xml')
-  		.then(response => response.text())
-  		.then(xml => {
-  		const parser = new DOMParser();
-  		const xmlDoc = parser.parseFromString(xml,"text/xml");
-  		const html = Array.from(xmlDoc.getElementsByTagName('entry')).map(entry => `
-    		<ul class="rss">
-			<li><a href="${t(entry, 'link').getAttribute('href')}" target="_blank">
-        		${t(entry, 'title').innerHTML}
-      			</a> (${date(entry)})</li>
-    		</ul>`);
-  		document.getElementById('rss-feeds').innerHTML = html.join('');
-		})
-		.then(() => hideItems());
-/*
-  $(function(){
-	  
-    function fetchFeed(callback){
-      $("#rss-feeds").rss("https://lambdasec.github.io/feed.xml",
-      {
-	layoutTemplate:'<ul class="rss">{entries}</ul>',
-        entryTemplate:'<li><a href="{url}" target="_blank">{title}</a> ({date})</li>',
-	dateFormat: 'YYYY',
-	limit: 32
-      }, callback)
-    }
-	  
-    function hideItems(){	   
-      $('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'})
-    }	
-	  
-   fetchFeed(hideItems);		     
-  });*/
+	function fetchFeed(callback) {
+		const t = (entry, tname) => entry.getElementsByTagName(tname)[0];
+		const date = entry => new Date(t(entry, 'published').textContent).getFullYear();
+		//const html2txt = html => html.replace(/<(?:.|\n)*?>/gm, '');
+		//const content = entry => html2txt(t(entry, 'content').textContent).slice(0, 200);
+
+		fetch('https://lambdasec.github.io/feed.xml')
+			.then(response => response.text())
+			.then(xml => {
+			const parser = new DOMParser();
+			const xmlDoc = parser.parseFromString(xml,"text/xml");
+			const html = Array.from(xmlDoc.getElementsByTagName('entry')).map(entry => `
+					<li><a href="${t(entry, 'link').getAttribute('href')}" target="_blank">
+					${t(entry, 'title').innerHTML}
+					</a> (${date(entry)})</li>`);
+			document.getElementById('rss-feeds').innerHTML = `<ul class="rss">` + html.join('') + `</ul>`;
+			callback(); 
+			});
+	} 
+	
+	function hideItems(){
+		$('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
+	}
 </script>
 </head>
 <body>
@@ -100,8 +85,8 @@
 	  </ul>
 	  <h3>Blog</h3>
 	  <blockquote>
- 	  <div id="rss-feeds"></div>
-          </blockquote>		  
+ 	  	<div id="rss-feeds"></div>
+      </blockquote>		  
 	<h3>Articles</h3>
 	<ul>
 	<li>
@@ -197,7 +182,7 @@
 	</li>
 	</ul>
 	<!-- .footer: the site footer text, links and whatever else -->
-      <p class="footer"> last updated on 18-may-23
+      <p class="footer"> last updated on 19-may-23
 	  </p>
     </div>
   </div>
