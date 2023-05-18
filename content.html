@@ -33,9 +33,9 @@
   		const xmlDoc = parser.parseFromString(xml,"text/xml");
   		const html = Array.from(xmlDoc.getElementsByTagName('entry')).map(entry => `
     		<ul class="rss">
-			<a href="${t(entry, 'link').getAttribute('href')}">
+			<li><a href="${t(entry, 'link').getAttribute('href')}" target="_blank">
         		${t(entry, 'title').innerHTML}
-      			</a>
+      			</a> ${date(entry)}</li>
     		</ul>`);
   		document.getElementById('rss-feeds').innerHTML = html.join('');
 	})
