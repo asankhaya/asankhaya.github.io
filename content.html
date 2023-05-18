@@ -21,6 +21,26 @@
 <script type="text/javascript" src='js/rss.js'></script>
 <script type="text/javascript" src="js/hideMaxListItem-min.js"></script>	
 <script>
+	const t = (entry, tname) => entry.getElementsByTagName(tname)[0];
+	const date = entry => new Date(t(entry, 'published').textContent).getDate();
+	const html2txt = html => html.replace(/<(?:.|\n)*?>/gm, '');
+	const content = entry => html2txt(t(entry, 'content').textContent).slice(0, 200);
+
+	fetch('https://lambdasec.github.io/feed.xml')
+  		.then(response => response.text())
+  		.then(xml => {
+  		const parser = new DOMParser();
+  		const xmlDoc = parser.parseFromString(xml,"text/xml");
+  		const html = Array.from(xmlDoc.getElementsByTagName('entry')).map(entry => `
+    		<div class="entry">
+      			<div class="timestamp">${date(entry)}</div>
+			<a href="${t(entry, 'link').getAttribute('href')}">
+        		<h2 class="entry-title">${t(entry, 'title').innerHTML}</h2>
+      			</a>
+    		</div>`);
+  		document.getElementById('rss-feeds').innerHTML = html.join('');
+	})
+/*
   $(function(){
 	  
     function fetchFeed(callback){
@@ -38,7 +58,7 @@
     }	
 	  
    fetchFeed(hideItems);		     
-  });
+  });*/
 </script>
 </head>
 <body>
