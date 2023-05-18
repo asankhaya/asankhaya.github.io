@@ -38,7 +38,12 @@
       			</a> ${date(entry)}</li>
     		</ul>`);
   		document.getElementById('rss-feeds').innerHTML = html.join('');
-	})
+		})
+		.then(hideitems())
+	
+      	function hideItems(){	   
+      		$('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'})
+    	}
 /*
   $(function(){
 	  
