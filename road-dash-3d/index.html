@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Dash 3D - Racing Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #gameContainer {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            z-index: 1000;
+        }
+        .game-title {
+            color: #ff3333;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+        }
+        .loading-bar {
+            width: 300px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .loading-progress {
+            height: 100%;
+            background-color: #ff3333;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .loading-text {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        .start-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 900;
+            display: none;
+        }
+        .name-input-container {
+            margin-bottom: 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            border: 2px solid #ff3333;
+        }
+        .name-input-label {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .name-input {
+            padding: 0.5rem 1rem;
+            background-color: #fff;
+            color: #000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            min-width: 300px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .start-button {
+            color: #fff;
+            font-size: 1.2rem;
+            background-color: rgba(255, 51, 51, 0.8);
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .controls-info {
+            color: #aaa;
+            font-size: 1rem;
+            margin-top: 3rem;
+            max-width: 500px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .speed-dial {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 16px;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .distance-display {
+            position: absolute;
+            top: 140px;
+            left: 20px;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .health-display {
+            position: absolute;
+            top: 180px;
+            left: 20px;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .leaderboard {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 180px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 14px;
+            padding: 8px;
+            border-radius: 4px;
+            display: none;
+        }
+        .leaderboard-title {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .control-hints {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: red;
+            font-size: 3rem;
+            font-family: sans-serif;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 40px;
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading" class="loading-screen">
+        <h1 class="game-title">ROAD DASH 3D</h1>
+        <div class="loading-bar">
+            <div id="loadingProgress" class="loading-progress"></div>
+        </div>
+        <div id="loadingText" class="loading-text">Loading game assets...</div>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="startScreen" class="start-screen">
+        <h1 class="game-title">ROAD DASH 3D</h1>
+        <div class="name-input-container">
+            <h2 class="name-input-label">ENTER YOUR NAME:</h2>
+            <div id="playerNameDisplay" class="name-input">Player</div>
+        </div>
+        <div id="startButton" class="start-button">PRESS ENTER TO START</div>
+        <div class="controls-info">
+            Controls: Arrow keys to drive. Stay on the road for maximum speed.
+            <br>Collect green health packs to restore health.
+            <br>Avoid traffic and other riders!
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div id="gameContainer">
+        <!-- Game HUD -->
+        <div id="speedDial" class="speed-dial">0 km/h</div>
+        <div id="distanceDisplay" class="distance-display">Distance: 0 m</div>
+        <div id="healthDisplay" class="health-display">Health: 100</div>
+        <div id="leaderboard" class="leaderboard">
+            <div class="leaderboard-title">Leaderboard</div>
+            <div id="leaderboardContent"></div>
+        </div>
+        <div id="controlHints" class="control-hints">
+            Controls: Arrow keys to drive | Stay on road for best speed
+        </div>
+        <div id="gameOver" class="game-over">
+            GAME OVER<br>
+            Press Enter to Restart
+        </div>
+    </div>
+
+    <!-- Import Map for ES Modules -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.157/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.157/examples/jsm/"
+            }
+        }
+    </script>
+
+    <!-- Main Entry Point -->
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>
