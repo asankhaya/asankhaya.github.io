@@ -1,30 +1,42 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Asankhaya Sharma</title>
-<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="css/html.css" media="screen, projection, tv " />
-<link rel="stylesheet" type="text/css" href="css/layout.css" media="screen, projection, tv" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/modern.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-51929846-3', 'asankhaya.github.io');
   ga('require', 'displayfeatures');
   ga('send', 'pageview');
 
 </script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/hideMaxListItem-min.js"></script>
 <script type="text/javascript">
-	// Run function on both ULs and OLs
-	$(document).ready(function() {  
-		$('#content ul.first').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
-		$('#content ul.Pingbacks').hideMaxListItems({ 'max':4, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
-	});  
+	$(document).ready(function() {
+		$('#page ul.first').hideMaxListItems({
+			'max': 5,
+			'speed': 300,
+			'moreText': 'Show [COUNT] more',
+			'lessText': 'Show less'
+		});
+		$('#page ul.Pingbacks').hideMaxListItems({
+			'max': 4,
+			'speed': 300,
+			'moreText': 'Show [COUNT] more',
+			'lessText': 'Show less'
+		});
+	});
 </script>
 
 </head>
@@ -44,77 +56,130 @@
     <!-- #menu: topbar menu of the site.  Use the helper classes .two, .three, .four and .five to set
                 the widths for 2, 3, 4 and 5 item menus. -->
     <ul id="menu" class="seven">
-	  <li><a href="index.html" class="here"><span class="big">A</span>bout Me</a></li>
-      <li><a href="research.html"><span class="big">R</span>esearch</a></li>
-      <li><a href="work.html"><span class="big">W</span>ork</a></li>
-      <li><a href="teaching.html"><span class="big">T</span>eaching</a></li>
-      <li><a href="professional.html"><span class="big">P</span>rofessional</a></li>
-	  <li><a href="content.html"><span class="big">C</span>ontent</a></li>
-	  <li><a href="contact.html"><span class="big">C</span>ontact</a></li>
+	  <li><a href="index.html" class="here">About Me</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="professional.html">Professional</a></li>
+	  <li><a href="content.html">Content</a></li>
+	  <li><a href="contact.html">Contact</a></li>
     </ul>
     <!-- #page: holds all page content, as well as footer -->
-    <div id="page">
-	  <h3>News</h3>
-	  <blockquote>
-	  <ul class="first">
-	  <li>[Talk] <a href="professional.html#OpenEvolve">OpenEvolve: Harnessing LLMs for Evolutionary Algorithm Discovery</a>, Apr 2025</li>
-	  <li>[Panel] <a href="professional.html#TEDxSingaporeLive25">Future of Humans & AI</a>, Apr 2025</li>
-	  <li>[Talk] <a href="professional.html#FOSSASIAMeetup25">Building an Open-Source AI Coding Agent</a>, Feb 2025</li>
-	  <li>[Talk] <a href="professional.html#SINCON24">Getting off the Scan-and-Fix Hamster Wheel with Generative AI</a>, May 2024</li>
-	  <li>[Talk] <a href="professional.html#AICamp24">Agentic AI Workflows for DevOps</a>, Apr 2024</li>
-	  <li>[Talk] <a href="professional.html#BHASIA2024">AutoFix: Automated Vulnerability Remediation Using Static Analysis and LLMs</a>, Apr 2024</li>
-	  <li>[Talk] <a href="professional.html#NUSHackers">Taming open code LLMs for SQL generation and bug fixing </a>, Oct 2023</li>
-	  <li>[Talk] <a href="professional.html#OWASP">Using LLMs and Generative AI to Fix Software Vulnerabilities</a>, Oct 2023</li>
-	  <li>[Panel] <a href="professional.html#CDOPanel">Embracing Generative AI: Opportunities and Challenges</a>, Aug 2023</li>
-	  <li>[Talk] <a href="professional.html#EHConference">Improving worker safety with computer vision and AI</a>, Aug 2023</li>
-	  <li>[Panel] <a href="professional.html#GLGAIPanel">The Evolution of AI and AI Regulations: Balancing Innovation and Protection</a>, Aug 2023</li>
-          <li>[Panel] <a href="professional.html#TEDxSingaporeLive">Bridging Disciplines, Unlocking Possibilities</a>, May 2023</li>
-          <li>[Talk] <a href="professional.html#FOSSASIA23">Open Source LLMs For The Win</a>, Apr 2023</li>
-	  <li>[Panel] <a href="professional.html#BetterSG">AI for Good, or AI for Bad?</a>, Mar 2023</li>
-          <li>[Panel] <a href="professional.html#TGIFPanel">There is No TGIF for Open-source Security</a>, Sep 2022</li>	
-          <li>[Talk] <a href="professional.html#MLSS">Machine Learning for Software Security</a>, Oct 2021</li>	
-          <li>[Talk] <a href="professional.html#BHEU2020">Effective Vulnerability Discovery with Machine Learning</a>, Dec 2020</li>	
-          <li>[Talk] <a href="professional.html#TestLean">Test Lean and Ship Healthy</a>, May 2020</li>	
-	  <li>[Talk] <a href="professional.html#PerformanceWorkshop">Performance Management for Software Engineers</a>, May 2020</li>	
-	  <li>[Talk] <a href="professional.html#LeadershipWorkshop">Insights on Leadership</a>, Dec 2019</li>	
-	  <li>[Talk] <a href="professional.html#TF2">9 types of people you find on your team</a>, Dec 2018</li>	  
-	  <li>[Talk] <a href="professional.html#SGL">Design and Implementation of Security Graph Language (SGL)</a>, Oct 2018</li>	  
-          <li>[Talk] <a href="professional.html#HITB">Using Machine Learning to Identify Security Issues in Open-Source Libraries</a>, Aug 2018</li>	  
-          <li>[Talk] <a href="professional.html#SCATalk">Securing Open Source Code in Enterprise</a>, Mar 2018</li>
-	  <li>[Article] <a href="writing.html#ReasonML">Reason with OCaml</a>, Feb 2018</li>
-	  <li>[Article] <a href="writing.html#MPT">Build a Portfolio of Cryptocurrencies using Modern Portfolio Theory</a>, Dec 2017</li>
-	  <li>[Talk] <a href="professional.html#ConnectDots">Connecting the dots: Machine Learning for Vulnerability Discovery</a>, Feb 2017</li>
-	  <li>[Talk] <a href="professional.html#Ransomware">Ransomware in Web Apps</a>, Dec 2016</li>		  
-          <li>[Talk] <a href="professional.html#SecureSoft">Secure Software Development</a>, Mar 2016</li>
-	  <li>[Talk] <a href="professional.html#DevSec">Developer-focused Software Security</a>, Feb 2016</li>
-	  <li>[Paper] <a href="research.html#HIPComp">Specifying Compatible Sharing in Data Structures</a>, ICFEM 2015</li>	
-	  <li>[Paper] <a href="research.html#CRwI">Certified Reasoning with Infinity</a>, FM 2015</li>
-	  <li>[Award] <a href="research.html#ACMTop10">ACM SIGSOFT Top 10 Downloaded Articles</a>, Jan 2015</li>	  
-	  <li>[Talk] <a href="professional.html#PyDataSG">Visualizing Symbolic Execution with Bokeh</a>, Jan 2015</li>
-          <li>[Course] <a href="teaching.html#SEProject">Software Engineering Project I/II</a>, Fall 2014</li>
-	  <li>[Award] <a href="research.html#ACMSRC">Bronze Medal at ACM Student Research Competition</a>, ICSE 2014</li>
-	  <li>[Article] <a href="writing.html#Immutable">6 Benefits of Programming with Immutable Objects in Java</a>, 2014</li>
-	  <li>[Article] <a href="writing.html#IDE">How do developers choose their IDE?</a>, 2014</li>
-	  <li>[Grant] <a href="research.html#AzureGrant">Virtual Appliance for Software Verification Research</a>, Microsoft Research 2014</li>
-          <li>[Paper] <a href="research.html#SLEEKDSL">Verified Subtyping with Traits and Mixins</a>, FSFMA 2014</li>
-	  <li>[Course] <a href="teaching.html#HIPSLEEK">Automated Verification with HIP and SLEEK</a>, 2014</li>
-	  <li>[Article] <a href="writing.html#TechnologyStack">How to choose the right Technology Stack for your Startup</a>, 2014</li>
-	  <li>[Talk] <a href="professional.html#DSO">HIP/SLEEK : An Automated Verification and Specification Inference System</a>, 
+    <main id="page">
+	  <section class="content-section">
+	    <h3>News</h3>
+	    <blockquote>
+	    <ul class="first">
+	  <li>🎤 <a href="professional.html#OpenEvolve">OpenEvolve: Harnessing LLMs for Evolutionary Algorithm Discovery</a>, Apr 2025</li>
+	  <li>👥 <a href="professional.html#TEDxSingaporeLive25">Future of Humans & AI</a>, Apr 2025</li>
+	  <li>🎤 <a href="professional.html#FOSSASIAMeetup25">Building an Open-Source AI Coding Agent</a>, Feb 2025</li>
+	  <li>🎤 <a href="professional.html#SINCON24">Getting off the Scan-and-Fix Hamster Wheel with Generative AI</a>, May 2024</li>
+	  <li>🎤 <a href="professional.html#AICamp24">Agentic AI Workflows for DevOps</a>, Apr 2024</li>
+	  <li>🎤 <a href="professional.html#BHASIA2024">AutoFix: Automated Vulnerability Remediation Using Static Analysis and LLMs</a>, Apr 2024</li>
+	  <li>🎤 <a href="professional.html#NUSHackers">Taming open code LLMs for SQL generation and bug fixing </a>, Oct 2023</li>
+	  <li>🎤 <a href="professional.html#OWASP">Using LLMs and Generative AI to Fix Software Vulnerabilities</a>, Oct 2023</li>
+	  <li>👥 <a href="professional.html#CDOPanel">Embracing Generative AI: Opportunities and Challenges</a>, Aug 2023</li>
+	  <li>🎤 <a href="professional.html#EHConference">Improving worker safety with computer vision and AI</a>, Aug 2023</li>
+	  <li>👥 <a href="professional.html#GLGAIPanel">The Evolution of AI and AI Regulations: Balancing Innovation and Protection</a>, Aug 2023</li>
+          <li>👥 <a href="professional.html#TEDxSingaporeLive">Bridging Disciplines, Unlocking Possibilities</a>, May 2023</li>
+          <li>🎤 <a href="professional.html#FOSSASIA23">Open Source LLMs For The Win</a>, Apr 2023</li>
+	  <li>👥 <a href="professional.html#BetterSG">AI for Good, or AI for Bad?</a>, Mar 2023</li>
+          <li>👥 <a href="professional.html#TGIFPanel">There is No TGIF for Open-source Security</a>, Sep 2022</li>	
+          <li>🎤 <a href="professional.html#MLSS">Machine Learning for Software Security</a>, Oct 2021</li>	
+          <li>🎤 <a href="professional.html#BHEU2020">Effective Vulnerability Discovery with Machine Learning</a>, Dec 2020</li>	
+          <li>🎤 <a href="professional.html#TestLean">Test Lean and Ship Healthy</a>, May 2020</li>	
+	  <li>🎤 <a href="professional.html#PerformanceWorkshop">Performance Management for Software Engineers</a>, May 2020</li>	
+	  <li>🎤 <a href="professional.html#LeadershipWorkshop">Insights on Leadership</a>, Dec 2019</li>	
+	  <li>🎤 <a href="professional.html#TF2">9 types of people you find on your team</a>, Dec 2018</li>	  
+	  <li>🎤 <a href="professional.html#SGL">Design and Implementation of Security Graph Language (SGL)</a>, Oct 2018</li>	  
+          <li>🎤 <a href="professional.html#HITB">Using Machine Learning to Identify Security Issues in Open-Source Libraries</a>, Aug 2018</li>	  
+          <li>🎤 <a href="professional.html#SCATalk">Securing Open Source Code in Enterprise</a>, Mar 2018</li>
+	  <li>📝 <a href="writing.html#ReasonML">Reason with OCaml</a>, Feb 2018</li>
+	  <li>📝 <a href="writing.html#MPT">Build a Portfolio of Cryptocurrencies using Modern Portfolio Theory</a>, Dec 2017</li>
+	  <li>🎤 <a href="professional.html#ConnectDots">Connecting the dots: Machine Learning for Vulnerability Discovery</a>, Feb 2017</li>
+	  <li>🎤 <a href="professional.html#Ransomware">Ransomware in Web Apps</a>, Dec 2016</li>		  
+          <li>🎤 <a href="professional.html#SecureSoft">Secure Software Development</a>, Mar 2016</li>
+	  <li>🎤 <a href="professional.html#DevSec">Developer-focused Software Security</a>, Feb 2016</li>
+	  <li>📄 <a href="research.html#HIPComp">Specifying Compatible Sharing in Data Structures</a>, ICFEM 2015</li>	
+	  <li>📄 <a href="research.html#CRwI">Certified Reasoning with Infinity</a>, FM 2015</li>
+	  <li>🏆 <a href="research.html#ACMTop10">ACM SIGSOFT Top 10 Downloaded Articles</a>, Jan 2015</li>	  
+	  <li>🎤 <a href="professional.html#PyDataSG">Visualizing Symbolic Execution with Bokeh</a>, Jan 2015</li>
+          <li>🎓 <a href="teaching.html#SEProject">Software Engineering Project I/II</a>, Fall 2014</li>
+	  <li>🏆 <a href="research.html#ACMSRC">Bronze Medal at ACM Student Research Competition</a>, ICSE 2014</li>
+	  <li>📝 <a href="writing.html#Immutable">6 Benefits of Programming with Immutable Objects in Java</a>, 2014</li>
+	  <li>📝 <a href="writing.html#IDE">How do developers choose their IDE?</a>, 2014</li>
+	  <li>💰 <a href="research.html#AzureGrant">Virtual Appliance for Software Verification Research</a>, Microsoft Research 2014</li>
+          <li>📄 <a href="research.html#SLEEKDSL">Verified Subtyping with Traits and Mixins</a>, FSFMA 2014</li>
+	  <li>🎓 <a href="teaching.html#HIPSLEEK">Automated Verification with HIP and SLEEK</a>, 2014</li>
+	  <li>📝 <a href="writing.html#TechnologyStack">How to choose the right Technology Stack for your Startup</a>, 2014</li>
+	  <li>🎤 <a href="professional.html#DSO">HIP/SLEEK : An Automated Verification and Specification Inference System</a>, 
 	  DSO National Laboratories, 28 March, 2014</li>	 
-	  <li>[Paper] <a href="research.html#EUB">Exploiting Undefined Behaviors for Efficient Symbolic Execution</a>, ICSE (ACM-SRC) 2014</li>  
-	  <li>[Event] <a href="work.html#3DS"> 3 Day Startup Singapore</a>, 11 to 13 April, 2014</li>
-	  <li>[Course] <a href="teaching.html#ProgrammingLanguageImplementation">Programming Language Implementation</a>, Spring 2014</li>
-	  <li>[Poem] <a href="writing.html#LifeinDeath">Life in Death</a>, 2013</li>
-	  <li>[Paper] <a href="research.html#HIPimm">HIPimm: Verifying Granular Immutability Guarantees</a>, PEPM 2014</li>	 
-	  <li>[Paper] <a href="research.html#ARefinementCalculusforPromela">A Refinement Calculus for Promela</a>, ICECCS 2013</li>
-	  <li>[Course] <a href="teaching.html#ProgrammingLanguageConcepts">Programming Language Concepts</a>, Fall 2013</li>
-	  <li>[Article] <a href="writing.html#AirPollutioninNewDelhi">Air Pollution in New Delhi</a>, 2013</li>
-	  <li>[Paper] <a href="research.html#ErrorCalculus">Towards Complete Specifications with an Error Calculus</a>, NFM 2013</li>
-	  <li>[Poem] <a href="writing.html#demons">Sometimes I wrestle with my demons Sometimes we just snuggle</a>, 2013</li>
-	  </ul>
-	  </blockquote>
-	<h3>Bio</h3>
-	<p><img src="img/photos/pic5.jpeg" alt="Asankhaya Sharma" class="floatLeft" width="35%"/>
+	  <li>📄 <a href="research.html#EUB">Exploiting Undefined Behaviors for Efficient Symbolic Execution</a>, ICSE (ACM-SRC) 2014</li>  
+	  <li>🎆 <a href="work.html#3DS"> 3 Day Startup Singapore</a>, 11 to 13 April, 2014</li>
+	  <li>🎓 <a href="teaching.html#ProgrammingLanguageImplementation">Programming Language Implementation</a>, Spring 2014</li>
+	  <li>📜 <a href="writing.html#LifeinDeath">Life in Death</a>, 2013</li>
+	  <li>📄 <a href="research.html#HIPimm">HIPimm: Verifying Granular Immutability Guarantees</a>, PEPM 2014</li>	 
+	  <li>📄 <a href="research.html#ARefinementCalculusforPromela">A Refinement Calculus for Promela</a>, ICECCS 2013</li>
+	  <li>🎓 <a href="teaching.html#ProgrammingLanguageConcepts">Programming Language Concepts</a>, Fall 2013</li>
+	  <li>📝 <a href="writing.html#AirPollutioninNewDelhi">Air Pollution in New Delhi</a>, 2013</li>
+	  <li>📄 <a href="research.html#ErrorCalculus">Towards Complete Specifications with an Error Calculus</a>, NFM 2013</li>
+	  <li>📜 <a href="writing.html#demons">Sometimes I wrestle with my demons Sometimes we just snuggle</a>, 2013</li>
+	    </ul>
+	    </blockquote>
+	  </section>
+	  
+	  <section class="content-section">
+	    <h3>Bio</h3>
+	    <div class="bio-section">
+	      <div class="bio-left">
+	        <img src="img/photos/pic5.jpeg" alt="Asankhaya Sharma" class="bio-image" />
+	        
+	        <div class="career-timeline">
+	          <h4>Career Journey</h4>
+	          <div class="timeline-item current">
+	            <div class="year">2024-Present</div>
+	            <div class="position">Co-Founder & CTO</div>
+	            <div class="company">Patched (YC S24)</div>
+	          </div>
+	          <div class="timeline-item">
+	            <div class="year">2023</div>
+	            <div class="position">Founder & CEO</div>
+	            <div class="company">Securade.ai</div>
+	          </div>
+	          <div class="timeline-item">
+	            <div class="year">2019-2022</div>
+	            <div class="position">Director of Incubation</div>
+	            <div class="company">Veracode</div>
+	          </div>
+	          <div class="timeline-item">
+	            <div class="year">2018-2019</div>
+	            <div class="position">Director of Software Engineering</div>
+	            <div class="company">CA Technologies</div>
+	          </div>
+	          <div class="timeline-item">
+	            <div class="year">2014-2018</div>
+	            <div class="position">Head of R&D</div>
+	            <div class="company">SourceClear</div>
+	          </div>
+	          <div class="timeline-item">
+	            <div class="year">2010-2014</div>
+	            <div class="position">PhD in CS</div>
+	            <div class="company">National University of Singapore</div>
+	          </div>
+	          <div class="timeline-item">
+	            <div class="year">2007-2010</div>
+	            <div class="position">Senior Software Engineer</div>
+	            <div class="company">Microsoft</div>
+	          </div>
+	          <div class="timeline-item">
+	            <div class="year">2003-2007</div>
+	            <div class="position">B.Tech in CSE</div>
+	            <div class="company">NIT Warangal</div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="bio-content">
+	        <p>
 	    I am currently the co-founder and CTO of <a href="https://patched.codes/" target="_blank">Patched (YC S24)</a>. We use generative AI and LLMs to create and validate private, secure and multi-file fixes that rival expert developers through open-source workflow automation.
 	    Before that, I was part of the venture builder cohort of <a href="https://sdta.sg/" target="_blank">SDTA 23</a>, where I successfully incubated and launched <a href="https://securade.ai/" target="_blank">Securade.ai</a> with the mission to make the world safer, 1 step at a time.
 	</p>
@@ -165,10 +230,15 @@
 	    I graduated high school from <a href="https://mrcahmedabad.kvs.ac.in/" target="_blank">
 	    KV Shahibaug</a>, Ahmedabad, India. During high school, I was awarded the Arun Lal Endowment Fund Scholarship by
 	    <a href="http://www.prl.res.in/" target="_blank">Physical Research Laboratory</a>, India.
-	</p>
-	<h3>Pingbacks</h3>
-	  <blockquote>
-	  <ul class="Pingbacks"> 
+	        </p>
+	      </div>
+	    </div>
+	  </section>
+	  
+	  <section class="content-section">
+	    <h3>Pingbacks</h3>
+	    <blockquote>
+	    <ul class="Pingbacks"> 
 	 <li>
 	  	<a href="https://analyticsindiamag.com/ai-startups/this-yc-backed-startup-automates-code-reviews-and-documentation-for-enterprises/" target="_blank">
 	  	Interview with Analytics India Magazine (AIM)
@@ -221,11 +291,15 @@
 	  [Reddit - r/ocaml]</a></li>
 	  <li>PRISM: Platform for Remote Sensing using Smartphones<a href="http://blog.sina.com.cn/s/blog_6d9744cf0100mdik.html" target="_blank">
 	  [Blog - Andy's Notebook]</a></li>
-	  </ul>
-	  </blockquote>
-	<!-- .footer: the site footer text, links and whatever else -->
-      <p class="footer"> last updated on 05-jul-25</p>
-    </div>
+	    </ul>
+	    </blockquote>
+	  </section>
+	  
+	  <!-- .footer: the site footer text, links and whatever else -->
+      <footer class="footer">
+        <p>last updated on 05-jul-25</p>
+      </footer>
+    </main>
   </div>
 </div>
 </body>

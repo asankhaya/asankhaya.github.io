@@ -1,16 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Asankhaya Sharma</title>
-<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="css/html.css" media="screen, projection, tv " />
-<link rel="stylesheet" type="text/css" href="css/layout.css" media="screen, projection, tv" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/modern.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-51929846-3', 'asankhaya.github.io');
   ga('require', 'displayfeatures');
@@ -64,16 +67,16 @@ $(function(){
     <!-- #menu: topbar menu of the site.  Use the helper classes .two, .three, .four and .five to set
                 the widths for 2, 3, 4 and 5 item menus. -->
     <ul id="menu" class="seven">
-	  <li><a href="index.html"><span class="big">A</span>bout Me</a></li>
-      <li><a href="research.html"><span class="big">R</span>esearch</a></li>
-      <li><a href="work.html"><span class="big">W</span>ork</a></li>
-      <li><a href="teaching.html"><span class="big">T</span>eaching</a></li>
-      <li><a href="professional.html"><span class="big">P</span>rofessional</a></li>
-	  <li><a href="content.html" class="here"><span class="big">C</span>ontent</a></li>
-	  <li><a href="contact.html"><span class="big">C</span>ontact</a></li>
+	  <li><a href="index.html">About Me</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="professional.html">Professional</a></li>
+	  <li><a href="content.html" class="here">Content</a></li>
+	  <li><a href="contact.html">Contact</a></li>
     </ul>
     <!-- #page: holds all page content, as well as footer -->
-    <div id="page">
+    <main id="page">
 	<h3>Newsletter</h3>
 	    <ul>
 		    <li><a href="https://www.linkedin.com/newsletters/6988078834164125696/" target="_blank">Breaking the Build: Understanding the Human Side of Software Development</a></li>
@@ -212,9 +215,10 @@ $(function(){
 	</li>
 	</ul>
 	<!-- .footer: the site footer text, links and whatever else -->
-      <p class="footer"> last updated on 23-dec-24
-	  </p>
-    </div>
+      <footer>
+        <p class="footer"> last updated on 23-dec-24</p>
+      </footer>
+    </main>
   </div>
 </div>
 </body>
