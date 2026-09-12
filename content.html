@@ -48,17 +48,17 @@ $(function(){
 
 	function fetchFeed(callback) {
 		const t = (entry, tname) => entry.getElementsByTagName(tname)[0];
-		const date = entry => new Date(t(entry, 'published').textContent).getFullYear();
+		const date = entry => new Date(t(entry, 'pubDate').textContent).getFullYear();
 		//const html2txt = html => html.replace(/<(?:.|\n)*?>/gm, '');
 		//const content = entry => html2txt(t(entry, 'content').textContent).slice(0, 200);
 
-		fetch('https://lambdasec.github.io/feed.xml')
+		fetch('https://lambdasec.github.io/rss.xml')
 			.then(response => response.text())
 			.then(xml => {
 			const parser = new DOMParser();
 			const xmlDoc = parser.parseFromString(xml,"text/xml");
-			const html = Array.from(xmlDoc.getElementsByTagName('entry')).map(entry => `
-					<li><a href="${t(entry, 'link').getAttribute('href')}" target="_blank">
+			const html = Array.from(xmlDoc.getElementsByTagName('item')).map(entry => `
+					<li><a href="${t(entry, 'link').textContent}" target="_blank">
 					${t(entry, 'title').innerHTML}
 					</a> (${date(entry)})</li>`);
 			document.getElementById('rss-feeds').innerHTML = `<ul class="rss">` + html.join('') + `</ul>`;
