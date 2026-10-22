@@ -1,9 +1,8 @@
 name: Generate sitemap 
 
+# Run manually from the Actions tab when publishing (no automatic runs on push)
 on:
-  push:
-    branches: [ master ]
-    paths: [ '**.html', '**.pdf' ]
+  workflow_dispatch:
 
 jobs:
   sitemap_job:
