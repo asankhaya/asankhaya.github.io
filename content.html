@@ -6,6 +6,7 @@
 <title>Content & Writing - Asankhaya Sharma</title>
 <meta name="description" content="Articles, blog posts, and written content by Asankhaya Sharma on technology, programming, finance, and entrepreneurship.">
 <meta name="author" content="Asankhaya Sharma">
+<meta name="theme-color" content="#1a1613">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -23,222 +24,181 @@
 <meta property="twitter:description" content="Articles, blog posts, and written content by Asankhaya Sharma on technology, programming, finance, and entrepreneurship.">
 <meta property="twitter:image" content="https://asankhaya.github.io/img/photos/pic5.jpeg">
 
+<link rel="icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/modern.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-51929846-3', 'asankhaya.github.io');
-  ga('require', 'displayfeatures');
-  ga('send', 'pageview');
-</script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script type="text/javascript" src="js/hideMaxListItem-min.js"></script>	
-<script>
-$(function(){
-	fetchFeed(hideItems);
-});	
-
-	function fetchFeed(callback) {
-		const t = (entry, tname) => entry.getElementsByTagName(tname)[0];
-		const date = entry => new Date(t(entry, 'pubDate').textContent).getFullYear();
-		//const html2txt = html => html.replace(/<(?:.|\n)*?>/gm, '');
-		//const content = entry => html2txt(t(entry, 'content').textContent).slice(0, 200);
-
-		fetch('https://lambdasec.github.io/rss.xml')
-			.then(response => response.text())
-			.then(xml => {
-			const parser = new DOMParser();
-			const xmlDoc = parser.parseFromString(xml,"text/xml");
-			const html = Array.from(xmlDoc.getElementsByTagName('item')).map(entry => `
-					<li><a href="${t(entry, 'link').textContent}" target="_blank">
-					${t(entry, 'title').innerHTML}
-					</a> (${date(entry)})</li>`);
-			document.getElementById('rss-feeds').innerHTML = `<ul class="rss">` + html.join('') + `</ul>`;
-			callback(); 
-			});
-	} 
-	
-	function hideItems(){
-		$('#content ul.rss').hideMaxListItems({ 'max':5, 'speed':500, 'moreText':'Expand ([COUNT])', 'lessText': 'Collapse'});
-	}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/site.js" defer></script>
 </head>
 <body>
-<!-- #wrapper: centers the content and sets the width -->
-<div id="wrapper">
-  <!-- #content: applies the white, dropshadow background -->
-  <div id="content">
-    <!-- #header: holds site title and subtitle -->
-    <div id="header">
-      <h1><span class="big darkBrown">A</span>sankhaya <span class="big darkBrown">S</span>harma</h1>
-      <!--
-      <h2><span class="highlight"><a href="http://www.comp.nus.edu.sg" target="_blank">Department of Computer Science</a>, <a href="http://www.nus.edu.sg" target="_blank">National University of Singapore</a></span></h2>
-      -->
-    </div>
-    <!-- #menu: topbar menu of the site.  Use the helper classes .two, .three, .four and .five to set
-                the widths for 2, 3, 4 and 5 item menus. -->
-    <ul id="menu" class="seven">
-	  <li><a href="index.html">About Me</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="professional.html">Professional</a></li>
-	  <li><a href="content.html" class="here">Content</a></li>
-	  <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <!-- #page: holds all page content, as well as footer -->
-    <main id="page">
-	<h3>Newsletter</h3>
-	    <ul>
-		    <li><a href="https://www.linkedin.com/newsletters/6988078834164125696/" target="_blank">Breaking the Build: Understanding the Human Side of Software Development</a></li>
-	    </ul>
-	<h3>Books</h3>
-	  <ul>
-	  <li>
-	  <a href="https://www.amazon.com/dp/B0CZK44QZ9" target="_blank">Fruitocracy: A Tale of Peel, Pulp, and Power</a>, 2024.
-	  </li>
-	  <li>
-	  <a href="https://www.amazon.com/dp/B0CVDPFCZT" target="_blank">The Essential Guide to Streamlit for Beginners</a>, [<a href="https://github.com/securade/streamlit-examples" target="_blank">code samples</a>], 2024.
-	  </li>
-	  <li>
-	  <a href="https://www.amazon.com/dp/B0CQVR3YMH" target="_blank">Am I A Yogi?</a>, Musings on conduct of life & spirituality, 2023.
-	  </li>
-	  <li>
-	  <a href="https://www.amazon.com/dp/B0CVRKVCSN" target="_blank">Adventures of Arav in Lothal</a>, Children's Story Book, 2023.
-	  </li>
-	  <li>
-	  <a href="https://www.amazon.com/dp/B0CTMCDJ6R" target="_blank">Embark on a Colorful Journey through Hindu Mythology</a>, Children's Coloring Book, 2023.
-	  </li>
-	  <li>
-	  <a href="https://www.amazon.com/dp/B0CR184K7C" target="_blank">The Alfie Holmes series</a>, Children's Book Series, 2023.
-	  </li>
-	  <li>
-	  <a href="https://amazon.com/dp/B0CKXYG3XT" target="_blank">Test Lean & Ship Healthy: A Handbook on Delivering High Quality Software in the DevOps World</a>, Collection of blog posts from my time leading engineering at SourceClear & Veracode, 2021.
-	  </li>
-	  <li>
-	  <a href="https://www.amazon.com/dp/B0CKYT5RKQ" target="_blank">How to be an Authentic Leader?</a>, Medium Editors' Picks, 2017.
-	  </li>
-	  </ul>
-	  <h3>Blog</h3>
-	  <blockquote>
- 	  	<div id="rss-feeds"></div>
-      </blockquote>		  
-	<h3>Articles</h3>
-	<ul>
-	<li>
-	<a name="langchain" href="https://medium.com/@asankhaya/the-essential-guide-to-langchain-for-beginners-b80b7cc2ef95" target="_blank">
-	The Essential Guide to LangChain for Beginners</a> (2024)
-	</li>
-	<li>
-	<a name="safetysecurity" href="https://www.linkedin.com/pulse/how-workplace-safety-similar-software-security-asankhaya-sharma" target="_blank">
-	How workplace safety is similar to software security?</a> (2023)
-	</li>
-	<li>
-	<a name="AIML" href="https://medium.com/@asankhaya/ai-ml-investment-thesis-939e4861029d" target="_blank">
-	AI/ML Investment Thesis</a> (2022)
-	</li>
-	<li>
-	<a name="ReasonML" href="https://medium.com/@asankhaya/reason-with-ocaml-b75697a6c00b" target="_blank">
-	Reason with OCaml</a> (2018)
-	</li>
-	<li>
-	<a name="MPT" href="https://medium.com/@asankhaya/build-a-portfolio-of-cryptocurrencies-using-modern-portfolio-theory-d65217858660" target="_blank">
-	Build a Portfolio of Cryptocurrencies using Modern Portfolio Theory</a> (2017)
-	</li>
-	<li>
-	<a href="https://medium.com/@asankhaya/this-is-actually-a-good-example-of-an-american-company-amazon-practicing-makaseru-d892e91d6112" target="_blank">
-	Makaseru (I entrust you with everything)</a> (2017)
-	</li>
-	<li>
-	<a href="https://www.linkedin.com/pulse/how-can-you-ensure-your-open-source-components-secure-sharma" target="_blank">
-	How can you ensure that your open source components are secure?</a> (2017)
-	</li>
-	<li>
-	<a href="https://www.linkedin.com/pulse/how-find-outstanding-people-work-asankhaya-sharma" target="_blank">
-	How to find outstanding people to work with?</a> (2016)
-	</li>
-	<li>
-	<a name="Innovation" href="https://www.linkedin.com/pulse/thinking-innovation-asankhaya-sharma" target="_blank">
-	Thinking about Innovation</a> (2015)
-	</li>
-	<li>
-	<a name="Immutable" href="https://www.linkedin.com/today/post/article/20140528113353-16837833-6-benefits-of-programming-with-immutable-objects-in-java" target="_blank">
-	6 Benefits of Programming with Immutable Objects in Java</a> (2014)
-	</li>
-	<li>
-	<a name="IDE" href="https://www.linkedin.com/today/post/article/20140522113335-16837833-how-do-developers-choose-their-ide" target="_blank">
-	How do developers choose their IDE?</a> (2014)
-	</li>
-	<li>
-	<a name="TechnologyStack" href="http://www.linkedin.com/today/post/article/20140404155507-16837833-how-to-choose-the-right-technology-stack-for-your-startup" target="_blank">
-	How to choose the right Technology Stack for your Startup?</a> (2014)
-	</li>
-	<li>
-	<a name="AirPollutioninNewDelhi" href="http://asankhaya.blogspot.sg/2013/06/air-pollution-in-new-delhi.html" target="_blank">
-	Air Pollution in New Delhi</a> (2013)
-	</li>
-	<li><a href="http://blog.nus.edu.sg/digital2012/2012/03/13/the-art-of-bootstrapping/" target="_blank">
-	The Art of Bootstrapping</a> (2012)
-	</li>
-	</ul>
-	<h3>Poems</h3>
-	<ul>
-	<li><a name="LifeinDeath" href="http://asankhaya.blogspot.sg/2013/12/life-in-death.html" target="_blank">
-	Life in Death</a> (2013)
-	</li>
-	<li><a name="demons" href="http://asankhaya.blogspot.sg/2013/05/sometimes-i-wrestle-with-my-demons.html" target="_blank">
-	Sometimes I wrestle with my demons Sometimes we just snuggle</a> (2013)
-	</li>
-	<li><a href="http://asankhaya.blogspot.sg/2010/10/you-are-source.html" target="_blank">
-	You are the Source</a> (2010)
-	</li>
-	<li><a href="http://asankhaya.blogspot.sg/2010/10/vultures-and-swan.html" target="_blank">
-	Vultures and Swan</a> (2010)
-	</li>
-	<li><a href="http://asankhaya.blogspot.sg/2010/10/every-act-i-deliver-is-performance.html" target="_blank">
-	Every Act I Deliver is Performance</a> (2010)
-	</li>
-	<li><a href="http://asankhaya.blogspot.sg/2006/11/i-me-and-no-irene.html" target="_blank">I, Me and No Irene</a> (2006)
-	</li>
-	</ul>
-    <h3>Essays</h3>
-	<ul>
-	<li>
-	<a href="http://asankhaya.blogspot.sg/2012/11/inclusive-growth.html" target="_blank">Inclusive Growth
-	</a> (2011)
-	</li>
-	<li>
-	<a href="http://asankhaya.blogspot.sg/2011/08/freedom-for-youth.html" target="_blank">
-	Freedom does not mean license, but the wisdom to choose what is right for oneself</a> (2010)	 
-	</a>
-	</li>
-	</ul>
-	<h3>Misc</h3>
-	<ul>
-	<li>
-	<a href="https://www.youtube.com/channel/UCuFiWG0Npd5-indQL3Z0Fkg" target="_blank">The Crowded A's [YouTube Channel]</a>
-        </li>
-	<li>
-	<a href="https://anchor.fm/kavita-path" target="_blank">Kavita Path - Poems from well known Hindi poets recited for your listening pleasure [Podcast]</a>
-	</li>
-	<!-- <li><a href="http://www.youtube.com/watch?feature=player_detailpage&v=mGDw8snifyU&t=2280" target="_blank">
-	Lagaan 2020 [Play]</a> (2002) -->
-	</li>
-	</ul>
-	<!-- .footer: the site footer text, links and whatever else -->
-      <footer>
-        <p class="footer"> last updated on 11-jul-25</p>
-      </footer>
-    </main>
+
+<header class="band">
+  <div class="wrap top">
+    <a class="mark" href="index.html">Asankhaya Sharma</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="work.html">Work</a>
+      <a href="professional.html">Talks</a>
+      <a href="content.html" aria-current="page">Writing</a>
+    </nav>
   </div>
-</div>
+  <div class="wrap">
+    <h1 class="page-title">Writing</h1>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="books">
+    <h2>Books</h2>
+    <ul class="entries">
+      <li><span class="yr">2026</span><div><a class="t" href="https://www.amazon.com/dp/B0GYPH8H9W" target="_blank">The Midnight Throne: Book I - Fire</a></div></li>
+      <li><span class="yr">2024</span><div><a class="t" href="https://www.amazon.com/dp/B0CZK44QZ9" target="_blank">Fruitocracy: A Tale of Peel, Pulp, and Power</a></div></li>
+      <li><span class="yr">2024</span><div><a class="t" href="https://www.amazon.com/dp/B0CVDPFCZT" target="_blank">The Essential Guide to Streamlit for Beginners</a><span class="res"><a href="https://github.com/securade/streamlit-examples" target="_blank">code samples</a></span></div></li>
+      <li><span class="yr">2023</span><div><a class="t" href="https://www.amazon.com/dp/B0CQVR3YMH" target="_blank">Am I A Yogi?</a><span class="meta">Musings on conduct of life &amp; spirituality</span></div></li>
+      <li><span class="yr">2023</span><div><a class="t" href="https://www.amazon.com/dp/B0CVRKVCSN" target="_blank">Adventures of Arav in Lothal</a><span class="meta">Children's Story Book</span></div></li>
+      <li><span class="yr">2023</span><div><a class="t" href="https://www.amazon.com/dp/B0CTMCDJ6R" target="_blank">Embark on a Colorful Journey through Hindu Mythology</a><span class="meta">Children's Coloring Book</span></div></li>
+      <li><span class="yr">2023</span><div><a class="t" href="https://www.amazon.com/dp/B0CR184K7C" target="_blank">The Alfie Holmes series</a><span class="meta">Children's Book Series</span></div></li>
+      <li><span class="yr">2021</span><div><a class="t" href="https://amazon.com/dp/B0CKXYG3XT" target="_blank">Test Lean &amp; Ship Healthy: A Handbook on Delivering High Quality Software in the DevOps World</a><span class="meta">Collection of blog posts from my time leading engineering at SourceClear &amp; Veracode</span></div></li>
+      <li><span class="yr">2017</span><div><a class="t" href="https://www.amazon.com/dp/B0CKYT5RKQ" target="_blank">How to be an Authentic Leader?</a><span class="meta">Medium Editors' Picks</span></div></li>
+    </ul>
+  </section>
+
+  <section class="section" id="newsletter">
+    <h2>Newsletter</h2>
+    <ul class="entries plain">
+      <li><div><a class="t" href="https://www.linkedin.com/newsletters/6988078834164125696/" target="_blank">Breaking the Build: Understanding the Human Side of Software Development</a></div></li>
+    </ul>
+  </section>
+
+  <section class="section" id="blog">
+    <h2>Blog</h2>
+    <div id="rss-feeds"><p class="feed-status"><a href="https://lambdasec.github.io/" target="_blank">lambdasec.github.io</a></p></div>
+  </section>
+
+  <section class="section" id="articles">
+    <h2>Articles</h2>
+    <div>
+      <ul class="entries">
+        <li id="langchain"><span class="yr">2024</span><div><a class="t" href="https://medium.com/@asankhaya/the-essential-guide-to-langchain-for-beginners-b80b7cc2ef95" target="_blank">The Essential Guide to LangChain for Beginners</a></div></li>
+        <li id="safetysecurity"><span class="yr">2023</span><div><a class="t" href="https://www.linkedin.com/pulse/how-workplace-safety-similar-software-security-asankhaya-sharma" target="_blank">How workplace safety is similar to software security?</a></div></li>
+        <li id="AIML"><span class="yr">2022</span><div><a class="t" href="https://medium.com/@asankhaya/ai-ml-investment-thesis-939e4861029d" target="_blank">AI/ML Investment Thesis</a></div></li>
+        <li id="ReasonML"><span class="yr">2018</span><div><a class="t" href="https://medium.com/@asankhaya/reason-with-ocaml-b75697a6c00b" target="_blank">Reason with OCaml</a></div></li>
+        <li id="MPT"><span class="yr">2017</span><div><a class="t" href="https://medium.com/@asankhaya/build-a-portfolio-of-cryptocurrencies-using-modern-portfolio-theory-d65217858660" target="_blank">Build a Portfolio of Cryptocurrencies using Modern Portfolio Theory</a></div></li>
+      </ul>
+      <details class="more">
+        <summary>Show 8 more</summary>
+        <ul class="entries">
+          <li><span class="yr">2017</span><div><a class="t" href="https://medium.com/@asankhaya/this-is-actually-a-good-example-of-an-american-company-amazon-practicing-makaseru-d892e91d6112" target="_blank">Makaseru (I entrust you with everything)</a></div></li>
+          <li><span class="yr">2017</span><div><a class="t" href="https://www.linkedin.com/pulse/how-can-you-ensure-your-open-source-components-secure-sharma" target="_blank">How can you ensure that your open source components are secure?</a></div></li>
+          <li><span class="yr">2016</span><div><a class="t" href="https://www.linkedin.com/pulse/how-find-outstanding-people-work-asankhaya-sharma" target="_blank">How to find outstanding people to work with?</a></div></li>
+          <li id="Innovation"><span class="yr">2015</span><div><a class="t" href="https://www.linkedin.com/pulse/thinking-innovation-asankhaya-sharma" target="_blank">Thinking about Innovation</a></div></li>
+          <li id="Immutable"><span class="yr">2014</span><div><a class="t" href="https://www.linkedin.com/pulse/20140528113353-16837833-6-benefits-of-programming-with-immutable-objects-in-java" target="_blank">6 Benefits of Programming with Immutable Objects in Java</a></div></li>
+          <li id="IDE"><span class="yr">2014</span><div><a class="t" href="https://www.linkedin.com/pulse/20140522113335-16837833-how-do-developers-choose-their-ide" target="_blank">How do developers choose their IDE?</a></div></li>
+          <li id="TechnologyStack"><span class="yr">2014</span><div><a class="t" href="https://www.linkedin.com/pulse/20140404155507-16837833-how-to-choose-the-right-technology-stack-for-your-startup" target="_blank">How to choose the right Technology Stack for your Startup?</a></div></li>
+          <li id="AirPollutioninNewDelhi"><span class="yr">2013</span><div><a class="t" href="https://asankhaya.blogspot.com/2013/06/air-pollution-in-new-delhi.html" target="_blank">Air Pollution in New Delhi</a></div></li>
+          <!-- blog.nus.edu.sg post is gone
+          <li><span class="yr">2012</span><div><a class="t" href="http://blog.nus.edu.sg/digital2012/2012/03/13/the-art-of-bootstrapping/" target="_blank">The Art of Bootstrapping</a></div></li>
+          -->
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="more-writing">
+    <h2>Poems</h2>
+    <div>
+      <ul class="entries">
+        <li id="LifeinDeath"><span class="yr">2013</span><div><a class="t" href="https://asankhaya.blogspot.com/2013/12/life-in-death.html" target="_blank">Life in Death</a></div></li>
+        <li id="demons"><span class="yr">2013</span><div><a class="t" href="https://asankhaya.blogspot.com/2013/05/sometimes-i-wrestle-with-my-demons.html" target="_blank">Sometimes I wrestle with my demons Sometimes we just snuggle</a></div></li>
+      </ul>
+      <details class="more">
+        <summary>More poems and essays</summary>
+        <ul class="entries">
+          <li><span class="yr">2010</span><div><a class="t" href="https://asankhaya.blogspot.com/2010/10/you-are-source.html" target="_blank">You are the Source</a></div></li>
+          <li><span class="yr">2010</span><div><a class="t" href="https://asankhaya.blogspot.com/2010/10/vultures-and-swan.html" target="_blank">Vultures and Swan</a></div></li>
+          <li><span class="yr">2010</span><div><a class="t" href="https://asankhaya.blogspot.com/2010/10/every-act-i-deliver-is-performance.html" target="_blank">Every Act I Deliver is Performance</a></div></li>
+          <li><span class="yr">2006</span><div><a class="t" href="https://asankhaya.blogspot.com/2006/11/i-me-and-no-irene.html" target="_blank">I, Me and No Irene</a></div></li>
+        </ul>
+        <h3>Essays</h3>
+        <ul class="entries">
+          <li><span class="yr">2011</span><div><a class="t" href="https://asankhaya.blogspot.com/2012/11/inclusive-growth.html" target="_blank">Inclusive Growth</a></div></li>
+          <li><span class="yr">2010</span><div><a class="t" href="https://asankhaya.blogspot.com/2011/08/freedom-for-youth.html" target="_blank">Freedom does not mean license, but the wisdom to choose what is right for oneself</a></div></li>
+        </ul>
+        <!-- Misc: hidden
+        <h3>Misc</h3>
+        <ul class="entries plain">
+          <li><div><a class="t" href="https://www.youtube.com/channel/UCuFiWG0Npd5-indQL3Z0Fkg" target="_blank">The Crowded A's</a><span class="meta">YouTube Channel</span></div></li>
+          <li><div><a class="t" href="https://creators.spotify.com/pod/profile/kavita-path/" target="_blank">Kavita Path</a><span class="meta">Poems from well known Hindi poets recited for your listening pleasure [Podcast]</span></div></li>
+        </ul>
+        -->
+      </details>
+    </div>
+  </section>
+
+<script>
+(function () {
+  var box = document.getElementById('rss-feeds');
+  function item(entry) {
+    var get = function (tag) { var el = entry.getElementsByTagName(tag)[0]; return el ? el.textContent : ''; };
+    var li = document.createElement('li');
+    var yr = document.createElement('span');
+    yr.className = 'yr';
+    yr.textContent = new Date(get('pubDate')).getFullYear() || '';
+    var body = document.createElement('div');
+    var a = document.createElement('a');
+    a.className = 't';
+    a.href = get('link');
+    a.target = '_blank';
+    a.textContent = get('title');
+    body.appendChild(a);
+    li.appendChild(yr);
+    li.appendChild(body);
+    return li;
+  }
+  function list(items) {
+    var ul = document.createElement('ul');
+    ul.className = 'entries';
+    items.forEach(function (e) { ul.appendChild(item(e)); });
+    return ul;
+  }
+  fetch('https://lambdasec.github.io/rss.xml')
+    .then(function (r) { return r.text(); })
+    .then(function (xml) {
+      var items = Array.from(new DOMParser().parseFromString(xml, 'text/xml').getElementsByTagName('item'));
+      if (!items.length) return;
+      box.innerHTML = '';
+      box.appendChild(list(items.slice(0, 5)));
+      if (items.length > 5) {
+        var d = document.createElement('details');
+        d.className = 'more';
+        var s = document.createElement('summary');
+        s.textContent = 'Show ' + (items.length - 5) + ' more';
+        d.appendChild(s);
+        d.appendChild(list(items.slice(5)));
+        box.appendChild(d);
+      }
+    })
+    .catch(function () {});
+})();
+</script>
+
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap foot-row">
+    <div class="icons">
+      <a href="https://www.linkedin.com/in/asankhaya/" target="_blank" title="LinkedIn"><img src="img/linkedin.png" alt="LinkedIn" width="22" height="22"></a>
+      <a href="https://twitter.com/asankhaya" target="_blank" title="Twitter"><img src="img/twitter.png" alt="Twitter" width="22" height="22"></a>
+      <a href="https://scholar.google.com/citations?user=FnD5B1QAAAAJ" target="_blank" title="Google Scholar"><img src="img/googlescholar.png" alt="Google Scholar" width="22" height="22"></a>
+      <a href="https://github.com/codelion" target="_blank" title="GitHub"><img src="img/github-logo.png" alt="GitHub" width="22" height="22"></a>
+      <a href="https://huggingface.co/codelion" target="_blank" title="Hugging Face"><img src="img/huggingface.jpg" alt="Hugging Face" width="22" height="22"></a>
+      <a href="http://fb.me/asankhaya" target="_blank" title="Facebook"><img src="img/facebook500.png" alt="Facebook" width="22" height="22"></a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
