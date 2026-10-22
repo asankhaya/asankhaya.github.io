@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://asankhaya.github.io/sitemap.xml

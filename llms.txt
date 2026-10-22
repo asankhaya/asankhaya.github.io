@@ -1,0 +1,35 @@
+# Asankhaya Sharma
+
+> AI/ML researcher and entrepreneur focused on generative AI, software security, and LLM inference optimization. Co-founder and CTO of Patched (YC S24), founder of SecuradeAI, and creator of the open-source projects OptiLLM and OpenEvolve.
+
+Asankhaya Sharma holds a PhD in Computer Science from the National University of Singapore (thesis: Certified Reasoning for Automated Verification) and a BTech from NIT Warangal. Career highlights:
+
+- Co-Founder & CTO, Patched (YC S24), 2024–2026: generative AI and LLMs for private, secure, multi-file code fixes through open-source workflow automation.
+- Founder & CEO, SecuradeAI, 2022–2024, with the mission to make the world safer, one step at a time.
+- Director of Incubation, Veracode, 2019–2022: site leader for Veracode operations in Singapore.
+- Director of Software Engineering, CA Technologies, 2018–2019.
+- Head of R&D, SourceClear, 2014–2018 (acquired by CA Technologies in 2018).
+- Senior Software Engineer, Microsoft (SQL Server 2008, Visual Studio 2010).
+
+Research covers inference-time compute for LLMs, evolutionary algorithm discovery, software composition analysis, vulnerability detection, and program verification. Awards include the ACM SIGSOFT Distinguished Paper Award (MSR 2020).
+
+## Pages
+
+- [About](https://asankhaya.github.io/): bio and career summary
+- [Research](https://asankhaya.github.io/research.html): awards and publications, with PDFs
+- [Work](https://asankhaya.github.io/work.html): experience, open-source projects, apps, and teaching
+- [Talks](https://asankhaya.github.io/professional.html): invited talks and panels
+- [Writing](https://asankhaya.github.io/content.html): books, newsletter, blog, articles, and poems
+
+## Open source
+
+- [OpenEvolve](https://github.com/codelion/openevolve): LLM-driven evolutionary coding agent for algorithm discovery
+- [OptiLLM](https://github.com/codelion/optillm): optimizing inference proxy implementing inference-time techniques that improve LLM reasoning
+
+## Profiles
+
+- [GitHub](https://github.com/codelion)
+- [Hugging Face](https://huggingface.co/codelion)
+- [Google Scholar](https://scholar.google.com/citations?user=FnD5B1QAAAAJ)
+- [LinkedIn](https://www.linkedin.com/in/asankhaya/)
+- [X / Twitter](https://twitter.com/asankhaya)
